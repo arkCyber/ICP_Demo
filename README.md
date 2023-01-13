@@ -1,5 +1,13 @@
 # kontribute_dapp_example
 
+learn how to build a decentralised app with DFX, React JS, Motoko, Internet Identity and Chakra UI
+uses most of the tools that we used to build the main kontribute dapp
+
+steps:
+app was kick started with dfx new then this tutorial was followed
+- install dfx find command
+- npm install
+
 Welcome to your new kontribute_dapp_example project and to the internet computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
 
 To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.

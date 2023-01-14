@@ -1,7 +1,7 @@
 {
   "canisters": {
     "kontribute_dapp_example_backend": {
-      "main": "src/kontribute_dapp_example_backend/main.mo",
+      "main": "src/kontribute_dapp_example_backend/story.mo",
       "type": "motoko"
     },
     "kontribute_dapp_example_frontend": {

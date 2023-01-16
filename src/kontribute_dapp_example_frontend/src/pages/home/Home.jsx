@@ -17,7 +17,7 @@ const Home = () => {
     <Box>
       <Flex
         width={"100vw"}
-        height={"100vh"}
+        height={{ base: "auto", lg: "100vh" }}
         alignContent={"center"}
         justifyContent={"center"}
       >

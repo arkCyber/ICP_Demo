@@ -42,13 +42,13 @@ const NavBar = () => {
             <MenuList>
               <MenuGroup title="Features">
                 <NavLink to="/create">
-                  <MenuItem>Story upload</MenuItem>
+                  <MenuItem>1. Story upload</MenuItem>
                 </NavLink>
                 <NavLink to="/stories">
-                  <MenuItem>View stories</MenuItem>
+                  <MenuItem>2. View stories</MenuItem>
                 </NavLink>
                 <NavLink to="/marketplace">
-                  <MenuItem>NFT marketplace</MenuItem>
+                  <MenuItem>3. NFT marketplace</MenuItem>
                 </NavLink>
               </MenuGroup>
             </MenuList>

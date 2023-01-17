@@ -7,6 +7,7 @@ import {
   Heading,
   Text,
   UnorderedList,
+  OrderedList,
   ListItem,
   Link,
 } from "@chakra-ui/react";
@@ -88,13 +89,13 @@ const Home = () => {
               <Heading>
                 Learn how to build intermediate features such as ✅
               </Heading>
-              <UnorderedList mt={5}>
+              <OrderedList mt={5}>
                 <ListItem>Story creation and upload via a text editor</ListItem>
                 <ListItem>
                   Story storage and querying in a Motoko backend
                 </ListItem>
                 <ListItem>NFT Marketplace via NFT Anvil React tools</ListItem>
-              </UnorderedList>
+              </OrderedList>
             </Box>
           </SimpleGrid>
         </Center>

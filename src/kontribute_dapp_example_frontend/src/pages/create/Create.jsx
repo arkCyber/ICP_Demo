@@ -11,6 +11,7 @@ const Create = () => {
   const [buttonClicked, setButtonClicked] = useState(false);
   const [uploadedResult, setUploadedResult] = useState("");
 
+  // We imported the backend smart contract and upload the newly created story to it:
   const uploadStory = async () => {
     setButtonClicked(true);
 

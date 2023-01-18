@@ -2,11 +2,15 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { NavBar } from "./components";
 import { Home, Create, Stories, Marketplace } from "./pages";
+import { useAnvilSelector } from "@vvv-interactive/nftanvil-react";
 
 // app components implements react router and helps
 // us to navigate to different components throughout the app
 
 const App = () => {
+  const loaded = useAnvilSelector((state) => state.user.map.history);
+
+  if (!loaded) return "Loading...";
   return (
     <Router>
       <NavBar />

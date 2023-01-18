@@ -94,7 +94,7 @@ const Home = () => {
                 <ListItem>
                   Story storage and querying in a Motoko backend
                 </ListItem>
-                <ListItem>NFT Marketplace via NFT Anvil React tools</ListItem>
+                <ListItem>Basic NFT marketplace via NFT Anvil React tools</ListItem>
               </OrderedList>
             </Box>
           </SimpleGrid>

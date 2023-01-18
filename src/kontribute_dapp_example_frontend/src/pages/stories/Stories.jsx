@@ -14,10 +14,14 @@ import { SearchIcon } from "@chakra-ui/icons";
 import { kontribute_dapp_example_backend } from "../../../../declarations/kontribute_dapp_example_backend/index";
 
 const Stories = () => {
-  const [storyId, setStoryId] = useState(0);
+  const [storyId, setStoryId] = useState(null);
   const [storyResult, setStoryResult] = useState({ title: "", body: "" });
 
   const SearchStory = async () => {
+    if (!storyId && storyId !== 0) { // guard clause
+      return;
+    }
+
     const result = await kontribute_dapp_example_backend.get(storyId);
 
     if ("ok" in result) {
@@ -39,9 +43,10 @@ const Stories = () => {
           <InputGroup mb={3}>
             <InputLeftAddon children="Story ID:" />
             <Input
+              onKeyPress={(e) => (e.key === "Enter" ? SearchStory() : null)}
               onChange={(e) => setStoryId(Number(e.target.value))}
               type="number"
-              placeholder="Search a story ID e.g 1"
+              placeholder="Search a story ID e.g 0"
             />
             <InputRightElement zIndex={1}>
               <Button height="100%" size="md" onClick={() => SearchStory()}>

@@ -9,6 +9,7 @@ import {
   MenuList,
   MenuItem,
   MenuGroup,
+  MenuDivider,
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { NavLink } from "react-router-dom";
@@ -40,6 +41,10 @@ const NavBar = () => {
               Menu
             </MenuButton>
             <MenuList>
+              <MenuGroup title="Identity">
+                <MenuItem>Identity: ""</MenuItem>
+              </MenuGroup>
+              <MenuDivider />
               <MenuGroup title="Features">
                 <NavLink to="/create">
                   <MenuItem>1. Story upload</MenuItem>

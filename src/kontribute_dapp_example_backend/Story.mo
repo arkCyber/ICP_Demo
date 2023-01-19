@@ -9,8 +9,9 @@ import Text "mo:base/Text";
 import Trie "mo:base/Trie";
 import Option "mo:base/Option";
 
-actor Story {
+// a basic smart contract to store and retrieve text-based stories
 
+actor Story {
     var voteOffering = 5; // votes to claim
     var admin : [Text] = [
         "", // add your own admin principal here
@@ -403,7 +404,7 @@ actor Story {
         Debug.print(debug_show (_stories));
     };
 
-    public shared ({ caller }) func whoami() : async Principal {
+    public shared query ({ caller }) func whoami() : async Principal {
         return caller;
     };
 };

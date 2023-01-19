@@ -14,22 +14,28 @@ import { tokenToText } from "@vvv-interactive/nftanvil-tools/cjs/token.js";
 import { itemQuality } from "@vvv-interactive/nftanvil-tools/cjs/items.js";
 import { e8sToIcp } from "@vvv-interactive/nftanvil-tools/cjs/accountidentifier.js";
 
+// A single NFT box that retrieves an NFTs meta data
 const MarketplaceNft = ({ tokenId }) => {
   const [Loaded, setLoaded] = useState(false);
   const [nftData, setNftData] = useState({});
   const anvilDispatch = useAnvilDispatch();
 
   let isMounted = true;
+  // token IDs orignally are stored as numbers eg. 114567
+  // however the system uses them in the format of nfta6b9yxhhqt95wh6g8,
+  // this is to identify the standard (NFTA), so we change the ID to this format.
   const token = tokenToText(tokenId);
 
   const Load = async () => {
     const meta = await anvilDispatch(nft_fetch(token));
+    // NFT meta is packed with metadata uncomment out this line of code to view it
+    // console.log(meta);
 
     if (isMounted) {
+      // for this example we only need the following NFT metadata:
       setNftData({
         id: token,
         name: meta.name,
-        colorDark: itemQuality.dark[meta.quality].color,
         colorLight: itemQuality.light[meta.quality].color,
         price: meta.price.amount,
         thumb: meta.thumb.internal

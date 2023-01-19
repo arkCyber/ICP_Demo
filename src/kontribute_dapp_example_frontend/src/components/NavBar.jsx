@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { NavLink } from "react-router-dom";
+import Identity from "./Identity";
 
 const NavBar = () => {
   return (
@@ -42,7 +43,7 @@ const NavBar = () => {
             </MenuButton>
             <MenuList>
               <MenuGroup title="Identity">
-                <MenuItem>Identity: ""</MenuItem>
+                <Identity />
               </MenuGroup>
               <MenuDivider />
               <MenuGroup title="Features">

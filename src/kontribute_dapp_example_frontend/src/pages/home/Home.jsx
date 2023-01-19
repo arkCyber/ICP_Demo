@@ -94,7 +94,9 @@ const Home = () => {
                 <ListItem>
                   Story storage and querying in a Motoko backend
                 </ListItem>
-                <ListItem>Basic NFT marketplace via NFT Anvil React tools</ListItem>
+                <ListItem>
+                  Basic Identity and NFT marketplace via NFT Anvil React tools
+                </ListItem>
               </OrderedList>
             </Box>
           </SimpleGrid>
@@ -105,7 +107,7 @@ const Home = () => {
           <Heading>Helpful resources 📚</Heading>
           <Text mt={5}>General information about the ICP blockchain:</Text>
           <Link
-            href="https://internetcomputer.org/do📚cs/current/developer-docs/ic-overview"
+            href="https://internetcomputer.org/developers"
             color="blue.500"
             isExternal
           >

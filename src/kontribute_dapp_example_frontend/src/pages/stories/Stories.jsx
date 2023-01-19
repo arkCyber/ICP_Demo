@@ -9,6 +9,7 @@ import {
   Container,
   Button,
   Text,
+  Heading,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { kontribute_dapp_example_backend } from "../../../../declarations/kontribute_dapp_example_backend/index";
@@ -17,6 +18,8 @@ const Stories = () => {
   const [storyId, setStoryId] = useState(null);
   const [storyResult, setStoryResult] = useState({ title: "", body: "" });
 
+  /* In this example we implement a simple search function to query one of our uploaded stories,
+  in a production application you may want to automatically query multiple stories at a time */
   const SearchStory = async () => {
     if (!storyId && storyId !== 0) { // guard clause
       return;
@@ -54,9 +57,9 @@ const Stories = () => {
               </Button>
             </InputRightElement>
           </InputGroup>
-          <Text size="lg" fontWeight="bold">
+          <Heading as={"h3"}>
             {storyResult.title}
-          </Text>
+          </Heading>
           <Text
             size="md"
             dangerouslySetInnerHTML={{ __html: storyResult.story }}

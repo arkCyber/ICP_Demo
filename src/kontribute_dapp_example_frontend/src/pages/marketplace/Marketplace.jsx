@@ -3,16 +3,21 @@ import { Center, SimpleGrid, Box, Stack, Button, Text } from "@chakra-ui/react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
 import { MarketplaceNft } from "../../components";
 
-// The minting address is the one used to retrieve data for the marketplace such as which NFTs are
-// for sale from that address. For this example we are using the Bonsai Warriors minting address,
-// you can change this to your own. such as the one from https://nftanvil.com/ or
-// the address you get from the Anvil command line tool: https://www.npmjs.com/package/@vvv-interactive/nftanvil
+/* The minting address is the one used to retrieve data for the marketplace such as which NFTs are
+for sale from that address. For this example we are using the Bonsai Warriors minting address,
+you can change this to your own. such as the one from https://nftanvil.com/ or
+the address you get from the Anvil command line tool: https://www.npmjs.com/package/@vvv-interactive/nftanvil */
 const MINTINGADDRESS =
   "a006b7308ff262c78c50b3a20059229d30b818034a9f5186eec8e93a1dc15f77";
 
 // This number can be changed to show a desired amount of NFTs on the UI
-const NFTSDISPLAYED = 8;
+const NFTSDISPLAYED = 12;
 
+/* This example does not include NFT trading and an inventory (to view your own NFTs) as its meant to be a basic
+starting point to show how the Anvil API works, if you want to integrate an inventory you can view the main Kontribute dapp code 
+and the GetMine.jsx function: https://github.com/teambonsai/bonsai_dapp/blob/main/src/kontribute_dapp_assets/src/pages/inventory/Inventory.jsx
+if you want to integrate buy and sell NFT functionality you can browse the following code:
+https://github.com/teambonsai/bonsai_dapp/tree/main/src/kontribute_dapp_assets/src/pages/largenft */
 const Marketplace = () => {
   const [Loaded, setLoaded] = useState(false);
   const [totalNfts, setTotalNfts] = useState([]);
@@ -29,9 +34,9 @@ const Marketplace = () => {
     const NftsForSale = allNfts.filter((singleNft) => singleNft[2] > 0);
     setTotalNfts(NftsForSale.length);
 
-    // You can integrate any sorting algorithm here.
-    // Such as by Rarity, lowest to highest or anything else,
-    // in this example we implement lowest to highest by default
+    /* You can integrate any sorting algorithm here.
+    Such as by Rarity, lowest to highest or anything else,
+    in this example we implement lowest to highest by default */
     const sortedNfts = NftsForSale.sort((a, b) => a[2] - b[2]);
 
     // we use pagination and show 20 NFTs at a time

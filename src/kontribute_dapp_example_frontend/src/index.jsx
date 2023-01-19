@@ -7,6 +7,7 @@ import { AnvilProvider } from "@vvv-interactive/nftanvil-react";
 const container = document.getElementById("app");
 const root = createRoot(container);
 
+// *REQUIRED*
 // Wrap ChakraProvider and AnvilProvider at the root of the app to give access to the libraries components
 
 root.render(

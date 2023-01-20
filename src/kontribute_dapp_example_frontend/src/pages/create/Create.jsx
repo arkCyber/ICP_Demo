@@ -3,7 +3,10 @@ import { Box, Flex, Input, Container, Button } from "@chakra-ui/react";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import "../../../assets/main.css";
-import { kontribute_dapp_example_backend, createActor } from "../../../../declarations/kontribute_dapp_example_backend/index";
+import {
+  kontribute_dapp_example_backend,
+  createActor,
+} from "../../../../declarations/kontribute_dapp_example_backend/index";
 import authentication from "@vvv-interactive/nftanvil-react/cjs/auth.js";
 
 const Create = () => {
@@ -14,6 +17,10 @@ const Create = () => {
 
   // We imported the backend smart contract and upload the newly created story to it:
   const uploadStory = async () => {
+    if (storyTitle === "" || storyBody === "") {
+      return setUploadedResult(`Story fields are empty!`);
+    }
+
     setButtonClicked(true);
 
     const storyObject = {
@@ -23,7 +30,7 @@ const Create = () => {
     };
 
     // we are using an un-authenticated actor (i.e anonymous identity) here, if you want to
-    // use an authenticated identity, you can use the below example actor code instead but make sure 
+    // use an authenticated identity, you can use the below example actor code instead but make sure
     // to deploy your backend canister live on the IC and create and edit a canister_ids.json
 
     // const storyActor = createActor(

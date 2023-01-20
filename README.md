@@ -1,59 +1,88 @@
-# kontribute_dapp_example
+# kontribute Example dapp
 
-learn how to build a decentralised app with DFX, React JS, Motoko, Internet Identity and Chakra UI
-uses most of the tools that we used to build the main kontribute dapp
+This dapp is a basic/simplified version of the main [Kontribute dapp](https://3ezq7-iqaaa-aaaal-aaacq-cai.raw.ic0.app/), Developers can clone this repo and learn how to build a decentralised app with text-based story uploading, storage, querying and a basic NFT marketplace. You can find the Example dapp frontend by visiting https://k2i6w-qaaaa-aaaap-aayiq-cai.ic0.app/
 
-steps:
-app was kick started with dfx new then this tutorial was followed
-- install dfx find command
-- npm install
+## The tech stack
+You can find more information on the main tools used to create this dapp here:
+* [React.js](https://reactjs.org/)
+* [Motoko](https://internetcomputer.org/docs/current/developer-docs/build/languages/motoko/)
+* [Anvil react tools](https://www.npmjs.com/package/@vvv-interactive/nftanvil-react)
+* [Chakra UI](https://www.npmjs.com/package/@vvv-interactive/nftanvil-react)
 
-Welcome to your new kontribute_dapp_example project and to the internet computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
+## Dependencies
+* [dfx](https://internetcomputer.org/docs/current/references/cli-reference/dfx-parent/)
+* [npm](https://nodejs.org/en/download/)
 
-To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
+## Basic Concepts
 
-To learn more before you start working with kontribute_dapp_example, see the following documentation available online:
+### What is the Internet Computer?
 
-- [Quick Start](https://sdk.dfinity.org/docs/quickstart/quickstart-intro.html)
-- [SDK Developer Tools](https://sdk.dfinity.org/docs/developers-guide/sdk-guide.html)
-- [Motoko Programming Language Guide](https://sdk.dfinity.org/docs/language-guide/motoko.html)
-- [Motoko Language Quick Reference](https://sdk.dfinity.org/docs/language-guide/language-manual.html)
-- [JavaScript API Reference](https://erxue-5aaaa-aaaab-qaagq-cai.raw.ic0.app)
+A new cryptocurrency technology launched in May 2021 that allows developers to build applications on top of it. It is faster and cheaper than other programmable blockchain alternatives.
 
-If you want to start working on your project right away, you might want to try the following commands:
+### What are canisters?
 
-```bash
-cd kontribute_dapp_example/
-dfx help
-dfx canister --help
+Dapps on the Internet Computer live in canisters, which are special smart contracts that run WebAssembly. Smart contracts are programs stored on a blockchain that run when predetermined conditions are met. They are typically used to automate the execution of an agreement. Our files of code are uploaded to and powered by the ICP blockchain.
+
+This repository uses React for the frontend running in the browser, and the backend is written in Motoko, it serves as the business logic of the dapp.
+
+You will build and deploy the following _canisters_:
+
+- `kontribute_dapp_example_frontend` is a regular modern React app, transferred into a `frontend asset` canister.
+- `kontribute_dapp_example_backend` is written in Motoko, and will hold the story creation/storage logic of the dapp.
+
+### What is Motoko?
+
+Motoko is a new language designed for the Internet Computer. Easy to learn for JavaScript and Solidity developers. Created by the Motoko team at the DFINITY Foundation, led by WebAssembly co-creator Andreas Rossberg. To learn more about the language, check out the [SDK](https://internetcomputer.org/docs/current/developer-docs/build/cdks/motoko-dfinity/motoko/).
+
+### What is Internet Identity?
+
+Internet Identity is a new authentication framework similar to Github or Google login, but providing complete anonimity to the users. We will be generating anonymous addresses based on a user’s specific device or biometric scanner - an example of a biometric scanner is a modern mobile phones fingerprint scanner or facial recognition (face ID). To learn more about Internet Identity check out the [documentation](https://internetcomputer.org/docs/current/tokenomics/identity-auth/what-is-ic-identity).
+
+## Install dependencies
+
+### How to get this repo
+
+Make sure you have [node.js](https://nodejs.org/) installed - v16.17.0 is recommended.
+
+Install the SDK -> `dfx` version v0.11.2, by running:
+
+```
+DFX_VERSION=0.11.2 sh -ci "$(curl -sSL https://internetcomputer.org/install.sh)"
 ```
 
-## Running the project locally
 
-If you want to test your project locally, you can use the following commands:
+### How to get this repo
+Run `git --version` to check if you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed.
+
+To clone this repo, run the following command:
+
+```
+git clone https://github.com/teambonsai/kontribute_example.git
+```
+
+### Motoko backend
+
+If you're using Visual Studio Code it is recommended to use the [Motoko extension](https://marketplace.visualstudio.com/items?itemName=dfinity-foundation.vscode-motoko) developed by the DFINITY Foundation.
+
+
+
+## Build & Deploy
 
 ```bash
-# Starts the replica, running in the background
-dfx start --background
+# make sure you are in the root directory with the src/ files
+cd kontribute_example/
 
-# Deploys your canisters to the replica and generates your candid interface
+# install all the node dependencies
+npm install
+
+# Start the ICP local development server
+dfx start --background --clean
+
+# Upload the files to the local canisters
 dfx deploy
-```
 
-Once the job completes, your application will be available at `http://localhost:8000?canisterId={asset_canister_id}`.
-
-Additionally, if you are making frontend changes, you can start a development server with
-
-```bash
+# Start the node development server
 npm start
 ```
 
-Which will start a server at `http://localhost:8080`, proxying API requests to the replica at port 8000.
-
-### Note on frontend environment variables
-
-If you are hosting frontend code somewhere without using DFX, you may need to make one of the following adjustments to ensure your project does not fetch the root key in production:
-
-- set`NODE_ENV` to `production` if you are using Webpack
-- use your own preferred method to replace `process.env.NODE_ENV` in the autogenerated declarations
-- Write your own `createActor` constructor
+Now you can navigate to `http://localhost:8080/` and explore the local application UI

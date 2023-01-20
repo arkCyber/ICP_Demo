@@ -35,8 +35,8 @@ const Marketplace = () => {
     setTotalNfts(NftsForSale.length);
 
     /* You can integrate any sorting algorithm here.
-    Such as by Rarity, lowest to highest or anything else,
-    in this example we implement lowest to highest by default */
+    Such as by Rarity, lowest to highest, etc.
+    In this example we implement lowest to highest by default */
     const sortedNfts = NftsForSale.sort((a, b) => a[2] - b[2]);
 
     // we use pagination and show 20 NFTs at a time

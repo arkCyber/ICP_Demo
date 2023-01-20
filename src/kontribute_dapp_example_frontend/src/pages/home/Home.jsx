@@ -71,7 +71,7 @@ const Home = () => {
                     color="blue.500"
                     isExternal
                   >
-                    NFT Anvil React API
+                    NFT anvil react API
                   </Link>
                 </ListItem>
                 <ListItem>
@@ -95,7 +95,7 @@ const Home = () => {
                   Story storage and querying in a Motoko backend
                 </ListItem>
                 <ListItem>
-                  Basic Identity and NFT marketplace via NFT Anvil React tools
+                  Basic identity and NFT marketplace via NFT anvil react tools
                 </ListItem>
               </OrderedList>
             </Box>

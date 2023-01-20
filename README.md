@@ -38,13 +38,13 @@ Motoko is a new language designed for the Internet Computer. Easy to learn for J
 
 Internet Identity is a new authentication framework similar to Github or Google login, but providing complete anonimity to the users. We will be generating anonymous addresses based on a user’s specific device or biometric scanner - an example of a biometric scanner is a modern mobile phones fingerprint scanner or facial recognition (face ID). To learn more about Internet Identity check out the [documentation](https://internetcomputer.org/docs/current/tokenomics/identity-auth/what-is-ic-identity).
 
-## Install dependencies
+## Install dependencies & clone the repo
 
-### How to get this repo
+### Node & dfx
 
-Make sure you have [node.js](https://nodejs.org/) installed - v16.17.0 is recommended.
+Make sure you have [node.js](https://nodejs.org/) installed -> v16.17.0 is recommended.
 
-Install the SDK -> `dfx` version v0.11.2, by running:
+Make sure you have `dfx` installed -> version v0.11.2, by running:
 
 ```
 DFX_VERSION=0.11.2 sh -ci "$(curl -sSL https://internetcomputer.org/install.sh)"

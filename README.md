@@ -1,4 +1,4 @@
-# Kontribute Example application
+# ICP Example application
 
 This repo contains the code for a simplified version of the main [Kontribute dapp](https://3ezq7-iqaaa-aaaal-aaacq-cai.raw.ic0.app/). Clone this repo and learn how to build an app on the Internet Computer blockchain with text-based story uploading and a basic NFT marketplace. You can find the frontend deployed here: https://k2i6w-qaaaa-aaaap-aayiq-cai.ic0.app/
 
